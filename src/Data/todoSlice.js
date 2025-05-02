@@ -20,15 +20,21 @@ const todoSlice = createSlice({
       state.todos.push(action.payload);
     },
     updateTodo: (state, action) => {
+      console.log('updateTodo action payload:', action.payload);
+      console.log('Current todos:', JSON.stringify(state.todos));
+      
       state.todos = state.todos.map((todo) => {
-        if (todo.id === action.payload) {
+        // Convert both IDs to strings for comparison to avoid type mismatches
+        if (String(todo.id) === String(action.payload)) {
+          console.log('Toggling todo:', todo);
           return { ...todo, completed: !todo.completed };
         }
         return todo;
       });
     },
     deleteTodo: (state, action) => {
-      state.todos = state.todos.filter(todo => todo.id !== action.payload);
+      console.log('deleteTodo action payload:', action.payload);
+      state.todos = state.todos.filter(todo => String(todo.id) !== String(action.payload));
     },
     clearCompleted: (state) => {
       state.todos = state.todos.filter(todo => !todo.completed);

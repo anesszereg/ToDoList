@@ -7,18 +7,13 @@ const ThemeToggle = () => {
     // Apply the theme class to the document
     if (darkMode) {
       document.documentElement.classList.add('dark');
-      document.body.style.backgroundColor = 'var(--bg-dark)';
+      document.body.classList.remove('light');
+      document.body.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
-      document.body.style.backgroundColor = '#f8fafc';
-      // Add light mode CSS variables
-      document.documentElement.style.setProperty('--bg-dark', '#f8fafc');
-      document.documentElement.style.setProperty('--card-bg', '#ffffff');
-      document.documentElement.style.setProperty('--card-hover', '#f1f5f9');
-      document.documentElement.style.setProperty('--text-primary', '#1e293b');
-      document.documentElement.style.setProperty('--text-secondary', '#475569');
-      document.documentElement.style.setProperty('--text-muted', '#64748b');
-      document.documentElement.style.setProperty('--border-color', '#e2e8f0');
+      document.documentElement.classList.add('light');
+      document.body.classList.remove('dark');
+      document.body.classList.add('light');
     }
   }, [darkMode]);
 

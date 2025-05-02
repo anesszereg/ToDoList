@@ -3,6 +3,10 @@
 :root {
   --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
   --secondary-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+}
+
+/* Dark Mode Variables */
+.dark, :root {
   --bg-dark: #121826;
   --card-bg: #1e293b;
   --card-hover: #2d3748;
@@ -10,6 +14,20 @@
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
   --border-color: #334155;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+}
+
+/* Light Mode Variables */
+.light {
+  --bg-dark: #f8fafc;
+  --card-bg: #ffffff;
+  --card-hover: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
   --success-color: #10b981;
   --danger-color: #ef4444;
   --warning-color: #f59e0b;

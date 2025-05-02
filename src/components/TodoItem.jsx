@@ -6,12 +6,15 @@ const TodoItem = ({ todo }) => {
   const dispatch = useDispatch();
   
   const handleToggle = () => {
-    // Ensure the ID is passed correctly
+    // Log the todo object to debug
+    console.log('Todo object:', todo);
     console.log('Toggling todo with ID:', todo.id);
+    // Dispatch the action with the todo ID
     dispatch(updateTodo(todo.id));
   };
   
   const handleDelete = () => {
+    console.log('Deleting todo with ID:', todo.id);
     dispatch(deleteTodo(todo.id));
   };
 
